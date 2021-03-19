@@ -139,6 +139,8 @@ export default {
     resizeHandler () {
       this.treeW = this.$refs.container.clientWidth
       this.treeH = this.$refs.container.clientHeight
+
+      this.$refs.tree.setTransform(this.treeW, this.treeH)
     },
     onClickNode (index) {
       this.$refs.tree.onClickNode(index)

@@ -206,7 +206,17 @@ export default {
         this.initTransformY = Math.floor(containerHeight / 2)
       }
     },
-    
+    setTransform(width, height) {
+      const containerWidth = width
+      const containerHeight = height
+      if (this.isVertical()) {
+        this.initTransformX = Math.floor(containerWidth / 2)
+        this.initTransformY = Math.floor(this.config.nodeHeight)
+      } else {
+        this.initTransformX = Math.floor(this.config.nodeWidth)
+        this.initTransformY = Math.floor(containerHeight / 2)
+      }
+    },
     generateLinkPath(d) {
       const self = this
       if (this.linkStyle === LinkStyle.CURVE) {
